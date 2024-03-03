@@ -1,11 +1,9 @@
-
-use std::net::SocketAddr;
-
-use axum::{response::Html, routing::get, Router, ServiceExt};
+use axum::{response::Html, routing::get, Router};
 use tokio::net::TcpListener;
 
 #[tokio::main]
 async fn main() {
+    // take a path, make a route
     let routes_hello = Router::new().route(
         "/hello",
         get(|| async {
